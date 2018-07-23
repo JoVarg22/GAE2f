@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAE2F", "GAE2F\GAE2F.csproj", "{35BC20B3-FB98-4395-8A41-0402585F5E98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pruebas de Arduino", "Pruebas de Arduino", "{DEFF913F-CD2E-493B-A90F-B3E0A24BB082}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Documents\NetBeansProjects\JavaApplication1\src\javaapplication1\JavaApplication1.java = ..\..\..\Documents\NetBeansProjects\JavaApplication1\src\javaapplication1\JavaApplication1.java
+		..\..\..\Documents\Arduino\sketch_jun28b\sketch_jun28b.ino = ..\..\..\Documents\Arduino\sketch_jun28b\sketch_jun28b.ino
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35BC20B3-FB98-4395-8A41-0402585F5E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BC20B3-FB98-4395-8A41-0402585F5E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BC20B3-FB98-4395-8A41-0402585F5E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BC20B3-FB98-4395-8A41-0402585F5E98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8878CBC-0C33-44F7-B877-3F732B059AB8}
+	EndGlobalSection
+EndGlobal
