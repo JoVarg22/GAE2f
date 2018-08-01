@@ -36,5 +36,20 @@ namespace GAE2F
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void administraciònToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verSitiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
