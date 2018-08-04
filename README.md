@@ -1,6 +1,7 @@
 # GAE2f
 
 Descripcion:
+
 Sistema de Gestión de Alarmas y Eventos de Equipos de Fuerza:
 
 El sistema se encargara de  recibir alarmas o alertas desde equipos de fuerza, tales como plantas de emergencias, rectificadores, o hasta inclusive puertas abiertas, con el fin de identificar de forma remota lo que sucede con los equipos y de esta forma lograr asegurar la continuidad del negocio, dichas alarmas deberan ser claras y actualizarse constantemente para asegurarse de brindar informacion real.
@@ -55,7 +56,8 @@ de esta forma la base de datos recibira la informacion de las pulsaciones que le
  
  
  Despliegue:
- 
- El usuario debera poder ejecutar la apliacion de escritorio creada en visual, ingresar las credenciales y visualizar las alarmas  en el home, ademas 
+Para correr el programa basta con  contar con la base de datos que contenga las Tablas con los insert de alarmas , las tablas para los usuarios , la comunicacion activa hacia la aplicacion y que el dispositivo de hardware ya sea un arduino para ambientes de prueba o algun equipo de fuerza para ambientes de produccion se comuniquen tambien con la base de datos, se ejecuta el programa y se visualiza en el home el resultado, ademas de manipular la base de datos mediante la aplicacíon.
+
+
 Autor:
 Jonathan Vargas
