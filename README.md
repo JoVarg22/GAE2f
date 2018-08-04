@@ -31,10 +31,31 @@ Se deberan ligar los pines de forma fisica al protoboard mediante los cables al 
 
 En Netbeans se debera habilitar un  puerto que para efectos de este proyecto es el 4444, confirmar la comunicacion entre el ADAFRUIT y la PC y mediante bucles observar como se recepcionan las alarmas dependiedo de los negativos y positivos en el arduino
 
+Ejemplo: Al correr la aplicacion en netbeans debera mostrar un resultado asi:
+
+SE CREA EL SOCKET...
+
+SE ESTABLECE COMUNICACION...
+
+LOW 
+LOW 
+LOW 
+HIGH 
+HIGH 
+LOW
+LOW
+HIGH
+
+Explicacion: al crear el socket se entiende que netbeans reservo el puerto en la computadora , cuando indica que establece comunicacion quiere decir que ya se ligo al ADAFRUIT, luego mediante un ciclo while((true) al quitar o poner voltaje a los pines  indica LOW= sin voltaje, HIGH= con voltage de esta forma confirmaremos la recepcion de alarmas a modo de prueba. El Texto HIGH  y LOW varian a nuestra conveniencia o sea es completamente editable a nuestro gusto.
+ 
 Se debe establecer una comunicacion entre la base de datos y el NETBEANS mediante ese puerto , y mediante otro puerto establecerla entre Visual  Basic y el servidor , para tener la comunicacion  completa.
 
 de esta forma la base de datos recibira la informacion de las pulsaciones que le envie el arduino y se las enviara a la aplicacion para que las muestre 
  estos codigos podran encontrarlos en los diferentes Releases de este proyecto, importante adecuarlos a sus circunstancias especificas 
  
+ 
+ Despliegue:
+ 
+ El usuario debera poder ejecutar la apliacion de escritorio creada en visual, ingresar las credenciales y visualizar las alarmas  en el home, ademas 
 Autor:
 Jonathan Vargas
