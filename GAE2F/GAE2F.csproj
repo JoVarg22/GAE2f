@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,11 +52,22 @@
     <Compile Include="Busquedas.Designer.cs">
       <DependentUpon>Busquedas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connectiondata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connectiondata.Designer.cs">
+      <DependentUpon>Connectiondata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Folders.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Folders.Designer.cs">
       <DependentUpon>Folders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GAE2FDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GAE2FDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -108,6 +120,18 @@
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Adicionales\sketch_jun28b.ino" />
+    <None Include="App1.config" />
+    <None Include="GAE2FDataSet.xsc">
+      <DependentUpon>GAE2FDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GAE2FDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GAE2FDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GAE2FDataSet.xss">
+      <DependentUpon>GAE2FDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
