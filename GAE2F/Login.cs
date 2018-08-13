@@ -47,15 +47,113 @@ namespace GAE2F
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+                SqlConnection conn = new System.Data.SqlClient.SqlConnection();
+                conn.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
+                conn.Open();
+
+                SqlCommand comando = new SqlCommand("select Usuario, Contraseña from Usuarios  where Usuario='" + Usuariotx.Text + "'And Contraseña='" + Contraseñatx.Text + "'", conn);
+                comando.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+
+                da.Fill(ds, "Usuarios");
+                DataRow DR;
+                DR = ds.Tables["Usuarios"].Rows[0];
+                if ((Usuariotx.Text == DR["Usuario"].ToString()) || (Contraseñatx.Text == DR["Contraseña"].ToString()))
+                {
+                    Home login = new Home();
+                    login.Show();
+                    this.Hide();
+
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!, Su Contraseña y/o usuario son invalidos","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+
+
+
+
+           /* Home Login = new Home();
+            this.Hide();
+            Login.Show();*/
             
-            string Usuario = this.textBox1;
-            string Contraseña = this.textBox2;
+
+            
+            
+           /* System.Data.SqlClient.SqlConnection con;
+            con = new System.Data.SqlClient.SqlConnection();
+            con.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
+
+            string Usuario = Usuariotx.Text;
+            string Contraseña = Contraseñatx.Text;
+
+            if (Usuario == "" || Contraseña == "")
+            {
+                MessageBox.Show("Insertar Usuario y Contraseña", "STICS Message");
+                this.Usuariotx.Focus();
+                return;
+
+            }
+
+            else
+
+            {
+
+
+
+                SqlConnection SQLConnection = new SqlConnection();
+
+
+
+
+                String commandString = "SELECT [ID_Usuario], FROM Usuarios WHERE[Usuario]=" + Usuariotx;
+                int t = Convert.ToInt32(commandString);
+                if (t == 0)
+                {
+
+                    MessageBox.Show("Credenciales incorrectas");
+                }
+                else
+                {
+
+                    Home login = new Home();
+                    this.Hide();
+                    login.Show();
+          
+
+                }
+
+                                }
+                 //System.Data.SqlClient.SqlConnection con;
+                 //con = new System.Data.SqlClient.SqlConnection();
+
+                    //con.ConnectionString = "Data Source = .\\SQLEXPRESS; AttachDbFilename="
+                 //logins();
+              //  Home home = new Home();
+              //   home.Show();*/
+             }
+        
+        private void Usuariotx_TextChanged(object sender, EventArgs e)
+        {
+            /*
+            string Usuario = this.Usuariotx;
+            string Contraseña = this.Contraseñatx;
             System.Data.SqlClient.SqlConnection con;
             con = new System.Data.SqlClient.SqlConnection();
             if (Usuario == "" || Contraseña == "")
             {
                 MessageBox.Show("Insertar Usuario y Contraseña", "STICS Message");
-                this.textBox1.Focus();
+                this.Usuariotx.Focus();
                 return;
 
             }
@@ -65,16 +163,16 @@ namespace GAE2F
             {
 
                 int ID_Usuario = 0;
-                string connstring = "Data Source =.\\SQLEXPRESS;AttachedDbFilename=C:\\Users\\Jonathan\\Documents\\SQL Server Management Studio\\GAE2F.sql;Integrated Security=True;Connect Timeout=30;User Instance=True";
-                using (SqlConnection con = new SqlConnection(connstring))
+                string connstring = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
+                using (SqlConnection conexion = new SqlConnection(connstring))
                 {
 
                     con.Open();
                     String commandString = "SELECT ISNULL([ID_Usuario]),0) FROM Usuarios WHERE[Usuario]=@Usuario AND [Contraseña]=@Contraseña";
 
-                    SqlCommand cmd = new SqlCommand(commandString.con);
-                    cmd.Parameters.AddWithValue("@Usuario", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@Contraseña", textBox1.Text);
+                    SqlCommand cmd = new SqlCommand(commandString.conexion);
+                    cmd.Parameters.AddWithValue("@Usuario", Usuariotx.Text);
+                    cmd.Parameters.AddWithValue("@Contraseña", Contraseñatx.Text);
 
                     ID_Usuario = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -94,18 +192,9 @@ namespace GAE2F
                     Login.Show();
 
                 }
-
             }
-            //System.Data.SqlClient.SqlConnection con;
-            //con = new System.Data.SqlClient.SqlConnection();
-  
-               //con.ConnectionString = "Data Source = .\\SQLEXPRESS; AttachDbFilename="
-            //logins();
-         //  Home home = new Home();
-         //   home.Show();
-        }
 
-        public void logins()
+        /*public void logins()
         {
             try
             {
@@ -131,8 +220,9 @@ namespace GAE2F
             {
                 MessageBox.Show(ex.ToString());
             }
+            */
+    }
 
         }
-
     }
-}
+

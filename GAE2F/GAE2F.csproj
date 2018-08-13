@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alarmas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alarmas.Designer.cs">
+      <DependentUpon>Alarmas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busquedas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,8 +101,14 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Alarmas.resx">
+      <DependentUpon>Alarmas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busquedas.resx">
       <DependentUpon>Busquedas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Connectiondata.resx">
+      <DependentUpon>Connectiondata.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

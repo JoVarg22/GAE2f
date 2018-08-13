@@ -51,5 +51,68 @@ namespace GAE2F
         {
 
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Usuarios Usuarios = new Usuarios();
+            Usuarios.Show();
+            
+        }
+
+        private void sitiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Sitios Sitios = new Sitios();
+            Sitios.Show();
+        }
+
+        private void alarmasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Alarmas Alarmas = new Alarmas();
+            Alarmas.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void conexionALaBDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Connectiondata conn = new Connectiondata();
+            this.Hide();
+            conn.Show();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+        private DateTimePicker timePicker;
+
+        private void InitializeTimePicker()
+        {
+            timePicker = new DateTimePicker();
+            timePicker.Format = DateTimePickerFormat.Time;
+            timePicker.ShowUpDown = true;
+            timePicker.Location = new Point(10, 10);
+            timePicker.Width = 100;
+            Controls.Add(timePicker);
+
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
+            
+        }
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Contraseñatx = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Usuariotx = new System.Windows.Forms.TextBox();
             this.lb_contraseña = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lb_usuario = new System.Windows.Forms.Label();
@@ -42,12 +42,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox2
+            // Contraseñatx
             // 
-            this.textBox2.Location = new System.Drawing.Point(10, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 20);
-            this.textBox2.TabIndex = 3;
+            this.Contraseñatx.Location = new System.Drawing.Point(10, 151);
+            this.Contraseñatx.Name = "Contraseñatx";
+            this.Contraseñatx.PasswordChar = '*';
+            this.Contraseñatx.Size = new System.Drawing.Size(194, 20);
+            this.Contraseñatx.TabIndex = 3;
             // 
             // button1
             // 
@@ -61,12 +62,13 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // Usuariotx
             // 
-            this.textBox1.Location = new System.Drawing.Point(10, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 2;
+            this.Usuariotx.Location = new System.Drawing.Point(10, 62);
+            this.Usuariotx.Name = "Usuariotx";
+            this.Usuariotx.Size = new System.Drawing.Size(194, 20);
+            this.Usuariotx.TabIndex = 2;
+            this.Usuariotx.TextChanged += new System.EventHandler(this.Usuariotx_TextChanged);
             // 
             // lb_contraseña
             // 
@@ -110,9 +112,9 @@
             this.groupBox1.Controls.Add(this.lb_usuario);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.linkLabel1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.Contraseñatx);
             this.groupBox1.Controls.Add(this.lb_contraseña);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Usuariotx);
             this.groupBox1.Location = new System.Drawing.Point(613, 261);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(222, 283);
@@ -152,6 +154,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BIENVENIDO A GAE2F";
             this.Load += new System.EventHandler(this.login_Load);
             this.groupBox1.ResumeLayout(false);
@@ -163,9 +166,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Contraseñatx;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Usuariotx;
         private System.Windows.Forms.Label lb_contraseña;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label lb_usuario;

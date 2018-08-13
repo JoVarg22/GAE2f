@@ -13,9 +13,9 @@ using System.Data.OleDb;
 
 namespace GAE2F
 {
-    public partial class Sitios : Form
+    public partial class Alarmas : Form
     {
-        public Sitios()
+        public Alarmas()
         {
             InitializeComponent();
         }
@@ -25,86 +25,72 @@ namespace GAE2F
 
         }
 
-        private void Regresar_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             Home Home = new Home();
             this.Hide();
             Home.Show();
         }
 
+        private void Alarmas_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'gAE2FDataSet.Alarmas' Puede moverla o quitarla según sea necesario.
+            this.alarmasTableAdapter.Fill(this.gAE2FDataSet.Alarmas);
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
-           
             SqlConnection conn = new System.Data.SqlClient.SqlConnection();
             conn.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
-          
 
-                 string sql = @"Insert into Sitio(ID_Sitio, Sitio)values(@ID_Sitio,@Sitio)";
+
+            string sql = @"Insert into Alarmas(ID_Alarma, Descripcion, Criticidad)values(@ID_Alarma,@Descripcion,@Criticidad)";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
-           
-     
-            cmd.Parameters.Add("@ID_Sitio", SqlDbType.Int).Value= textBox1.Text.Trim();
-            cmd.Parameters.Add("@Sitio", SqlDbType.VarChar,30).Value = textBox2.Text.Trim();
-            
+
+
+            cmd.Parameters.Add("@ID_Alarma", SqlDbType.Int).Value = textBox1.Text.Trim();
+            cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar, 30).Value = textBox2.Text.Trim();
+            cmd.Parameters.Add("@Criticidad", SqlDbType.VarChar, 30).Value = textBox3.Text.Trim();
             try
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Registro exitoso");
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void Sitios_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'gAE2FDataSet.Sitio' Puede moverla o quitarla según sea necesario.
-            this.sitioTableAdapter.Fill(this.gAE2FDataSet.Sitio);
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            
-         
-        }
-
-       
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new System.Data.SqlClient.SqlConnection();
             conn.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
             {
                 DataTable dt = new DataTable();
-                string query = "SELECT * FROM Sitio";
+                string query = "SELECT * FROM Alarmas";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
             }
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             SqlConnection conn = new System.Data.SqlClient.SqlConnection();
             conn.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
             {
-                SqlCommand Eliminar = new SqlCommand("delete from Sitio where ID_Sitio=" + textBox1.Text.Trim(),conn);
-                SqlCommand Eliminar2 = new SqlCommand("delete from Sitio where Sitio=" + textBox2.Text.Trim(), conn);
+                SqlCommand Eliminar = new SqlCommand("delete from Alarmas where ID_Alarma=" + textBox1.Text.Trim(), conn);
+                SqlCommand Eliminar2 = new SqlCommand("delete from Alarmas where Descripcion=" + textBox2.Text.Trim(), conn);
+                SqlCommand Eliminar3 = new SqlCommand("delete from Alarmas where Criticidad=" + textBox3.Text.Trim(), conn);
                 conn.Open();
-                if (Eliminar.ExecuteNonQuery() == 1) {
+                if (Eliminar.ExecuteNonQuery() == 1)
+                {
 
                     MessageBox.Show("Se ha eliminado el registro");
 
@@ -115,34 +101,42 @@ namespace GAE2F
                     MessageBox.Show("No se encontro el registro a eliminar");
 
                 }
-                
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new System.Data.SqlClient.SqlConnection();
             conn.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
             {
                 conn.Open();
-                string ID_Sitio= textBox1.Text;
-                string Sitio = textBox2.Text;
-                string cadena = "update Sitio set Sitio='" + Sitio + "' where ID_Sitio=" + ID_Sitio;
+                string ID_Alarma = textBox1.Text;
+                string Descripcion = textBox2.Text;
+                string Criticidad = textBox3.Text;
+                string cadena = "update Alarmas set Descripcion='" + Descripcion + "',Criticidad='"+Criticidad+"' where ID_Alarma=" + ID_Alarma;
                 SqlCommand comando = new SqlCommand(cadena, conn);
                 int cant;
                 cant = comando.ExecuteNonQuery();
                 if (cant == 1)
                 {
 
-                    MessageBox.Show("Se modificaron los datos del sitio");
+                    MessageBox.Show("Se modificaron los datos de la alarma");
                     textBox2.Text = "";
+                    textBox3.Text = "";
 
                 }
                 else
-                    MessageBox.Show("No existe un sitio con el ID ingresado");
+                    MessageBox.Show("No existe una alarma con el ID ingresado");
 
 
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
+

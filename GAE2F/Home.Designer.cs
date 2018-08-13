@@ -47,12 +47,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sitiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alarmasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conexionALaBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -111,6 +111,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // groupBox1
             // 
@@ -166,6 +167,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Folders";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Usuario
             // 
@@ -214,20 +216,15 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // administracionToolStripMenuItem
             // 
             this.administracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosToolStripMenuItem,
-            this.rolesToolStripMenuItem,
             this.sitiosToolStripMenuItem,
-            this.alarmasToolStripMenuItem});
+            this.alarmasToolStripMenuItem,
+            this.conexionALaBDToolStripMenuItem});
             this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
             this.administracionToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.administracionToolStripMenuItem.Text = "Administracion";
@@ -237,24 +234,34 @@
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
-            // 
-            // rolesToolStripMenuItem
-            // 
-            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
-            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rolesToolStripMenuItem.Text = "Roles";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // sitiosToolStripMenuItem
             // 
             this.sitiosToolStripMenuItem.Name = "sitiosToolStripMenuItem";
             this.sitiosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sitiosToolStripMenuItem.Text = "Sitios";
+            this.sitiosToolStripMenuItem.Click += new System.EventHandler(this.sitiosToolStripMenuItem_Click);
             // 
             // alarmasToolStripMenuItem
             // 
             this.alarmasToolStripMenuItem.Name = "alarmasToolStripMenuItem";
             this.alarmasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alarmasToolStripMenuItem.Text = "Alarmas";
+            this.alarmasToolStripMenuItem.Click += new System.EventHandler(this.alarmasToolStripMenuItem_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // conexionALaBDToolStripMenuItem
+            // 
+            this.conexionALaBDToolStripMenuItem.Name = "conexionALaBDToolStripMenuItem";
+            this.conexionALaBDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.conexionALaBDToolStripMenuItem.Text = "Conexion a la BD";
+            this.conexionALaBDToolStripMenuItem.Click += new System.EventHandler(this.conexionALaBDToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -262,7 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(903, 511);
+            this.ClientSize = new System.Drawing.Size(903, 501);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Usuario);
             this.Controls.Add(this.groupBox1);
@@ -271,7 +278,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -304,8 +313,8 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administracionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sitiosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alarmasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conexionALaBDToolStripMenuItem;
     }
 }
