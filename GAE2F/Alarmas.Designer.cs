@@ -50,7 +50,7 @@
             this.alarmasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gAE2FDataSet = new GAE2F.GAE2FDataSet();
             this.alarmasTableAdapter = new GAE2F.GAE2FDataSetTableAdapters.AlarmasTableAdapter();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -126,7 +126,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -237,18 +236,15 @@
             // 
             this.alarmasTableAdapter.ClearBeforeFill = true;
             // 
-            // listBox1
+            // button6
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Items.AddRange(new object[] {
-            "Critica",
-            "Mayor",
-            "Menor"});
-            this.listBox1.Location = new System.Drawing.Point(87, 216);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 94);
-            this.listBox1.TabIndex = 11;
+            this.button6.Location = new System.Drawing.Point(2, 371);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(127, 32);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Actualizar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Alarmas
             // 
@@ -256,6 +252,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(595, 510);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -295,6 +292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn criticidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button6;
     }
 }

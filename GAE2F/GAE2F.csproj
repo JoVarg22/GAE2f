@@ -64,11 +64,17 @@
     <Compile Include="Connectiondata.Designer.cs">
       <DependentUpon>Connectiondata.cs</DependentUpon>
     </Compile>
-    <Compile Include="Folders.cs">
+    <Compile Include="Estadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folders.Designer.cs">
-      <DependentUpon>Folders.cs</DependentUpon>
+    <Compile Include="Estadisticas.Designer.cs">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Filtros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filtros.Designer.cs">
+      <DependentUpon>Filtros.cs</DependentUpon>
     </Compile>
     <Compile Include="GAE2FDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Connectiondata.resx">
       <DependentUpon>Connectiondata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas.resx">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filtros.resx">
+      <DependentUpon>Filtros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

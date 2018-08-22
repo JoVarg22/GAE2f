@@ -81,7 +81,9 @@ namespace GAE2F
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Filtros Folders = new Filtros();
+            this.Hide();
+            Folders.Show();
         }
 
         private void conexionALaBDToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +115,25 @@ namespace GAE2F
         {
             
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Busquedas Busquedas = new Busquedas();
+            Busquedas.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Estadisticas Estadisticas = new Estadisticas();
+            Estadisticas.Show();
         }
     }
 }

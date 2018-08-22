@@ -63,19 +63,31 @@ namespace GAE2F
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new System.Data.SqlClient.SqlConnection();
-            conn.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
+          
             {
+                SqlConnection conn = new System.Data.SqlClient.SqlConnection();
+                conn.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
+                conn.Open();
                 DataTable dt = new DataTable();
                 string query = "SELECT * FROM Alarmas";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt);
-                dataGridView1.DataSource = dt;
+                cmd.Parameters.AddWithValue("@ID_Alarma", Convert.ToInt32(textBox1.Text));
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read()) {
+                    textBox2.Text = Convert.ToString(dr["Descripcion"].ToString());
+                    textBox3.Text = Convert.ToString(dr["Criticidad"].ToString());
+
+
+                }
+
+
+               
             }
         }
 
@@ -135,6 +147,18 @@ namespace GAE2F
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new System.Data.SqlClient.SqlConnection();
+            conn.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
+            DataTable dt = new DataTable();
+            string query = "SELECT * FROM Alarmas";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
         }
     }
 

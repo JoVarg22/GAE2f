@@ -80,147 +80,16 @@ namespace GAE2F
                 
             }
 
-
-
-
-           /* Home Login = new Home();
-            this.Hide();
-            Login.Show();*/
             
 
-            
-            
-           /* System.Data.SqlClient.SqlConnection con;
-            con = new System.Data.SqlClient.SqlConnection();
-            con.ConnectionString = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
 
-            string Usuario = Usuariotx.Text;
-            string Contraseña = Contraseñatx.Text;
-
-            if (Usuario == "" || Contraseña == "")
-            {
-                MessageBox.Show("Insertar Usuario y Contraseña", "STICS Message");
-                this.Usuariotx.Focus();
-                return;
-
-            }
-
-            else
-
-            {
-
-
-
-                SqlConnection SQLConnection = new SqlConnection();
-
-
-
-
-                String commandString = "SELECT [ID_Usuario], FROM Usuarios WHERE[Usuario]=" + Usuariotx;
-                int t = Convert.ToInt32(commandString);
-                if (t == 0)
-                {
-
-                    MessageBox.Show("Credenciales incorrectas");
-                }
-                else
-                {
-
-                    Home login = new Home();
-                    this.Hide();
-                    login.Show();
-          
-
-                }
-
-                                }
-                 //System.Data.SqlClient.SqlConnection con;
-                 //con = new System.Data.SqlClient.SqlConnection();
-
-                    //con.ConnectionString = "Data Source = .\\SQLEXPRESS; AttachDbFilename="
-                 //logins();
-              //  Home home = new Home();
-              //   home.Show();*/
+           
              }
+      
         
         private void Usuariotx_TextChanged(object sender, EventArgs e)
         {
-            /*
-            string Usuario = this.Usuariotx;
-            string Contraseña = this.Contraseñatx;
-            System.Data.SqlClient.SqlConnection con;
-            con = new System.Data.SqlClient.SqlConnection();
-            if (Usuario == "" || Contraseña == "")
-            {
-                MessageBox.Show("Insertar Usuario y Contraseña", "STICS Message");
-                this.Usuariotx.Focus();
-                return;
-
-            }
-
-            else
-
-            {
-
-                int ID_Usuario = 0;
-                string connstring = "Data Source=JONATHAN;Initial catalog=GAE2F;Integrated Security=True";
-                using (SqlConnection conexion = new SqlConnection(connstring))
-                {
-
-                    con.Open();
-                    String commandString = "SELECT ISNULL([ID_Usuario]),0) FROM Usuarios WHERE[Usuario]=@Usuario AND [Contraseña]=@Contraseña";
-
-                    SqlCommand cmd = new SqlCommand(commandString.conexion);
-                    cmd.Parameters.AddWithValue("@Usuario", Usuariotx.Text);
-                    cmd.Parameters.AddWithValue("@Contraseña", Contraseñatx.Text);
-
-                    ID_Usuario = Convert.ToInt32(cmd.ExecuteScalar());
-
-
-                }
-
-                if (ID_Usuario == 0)
-                {
-
-                    MessageBox.Show("Revise si ingreso los datos de forma correcta", "STICS Message");
-
-                }
-                else
-                {
-                    Home Login = new Home();
-                    this.Hide();
-                    Login.Show();
-
-                }
-            }
-
-        /*public void logins()
-        {
-            try
-            {
-                string GAE2F = ConfigurationManager.ConnectionStrings["GAE2F"].ConnectionString;
-                using (SqlConnection conexion = new SqlConnection(GAE2F))
-                {
-                    conexion.Open();
-                    using (SqlCommand cmd = new SqlCommand("SELECT usuario, Contraseña FROM Usuarios WHERE Usuario='" + textBox1.Text + "' AND pass='" + textBox2.Text + "'", conexion))
-                    {
-                        SqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            MessageBox.Show("Login exitoso.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Datos incorrectos.");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            */
+           
     }
 
         }

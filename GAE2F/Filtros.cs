@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace GAE2F
 {
-    public partial class Folders : Form
+    public partial class Filtros : Form
     {
-        public Folders()
+        public Filtros()
         {
             InitializeComponent();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Home Home = new Home();
+            this.Hide();
+            Home.Show();
         }
     }
 }
