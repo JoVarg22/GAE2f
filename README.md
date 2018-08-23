@@ -54,6 +54,7 @@ Se debe establecer una comunicacion entre la base de datos y el NETBEANS mediant
 de esta forma la base de datos recibira la informacion de las pulsaciones que le envie el arduino y se las enviara a la aplicacion para que las muestre 
  estos codigos podran encontrarlos en los diferentes Releases de este proyecto, importante adecuarlos a sus circunstancias especificas 
  
+ Nota: Una vez que el sistema este en desarrollo no sera imprescindible el uso de netbeans ya que se ha desarrollado en este proyecto con finalidad de ambiente de prueba
  
  Despliegue:
 Para correr el programa basta con  contar con la base de datos que contenga las Tablas con los insert de alarmas , las tablas para los usuarios , la comunicacion activa hacia la aplicacion y que el dispositivo de hardware ya sea un arduino para ambientes de prueba o algun equipo de fuerza para ambientes de produccion se comuniquen tambien con la base de datos, se ejecuta el programa y se visualiza en el home el resultado, ademas de manipular la base de datos mediante la aplicacíon.
